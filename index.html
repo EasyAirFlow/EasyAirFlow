@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scandinavian Clothing Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">NordicWear</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="cart-icon"><a href="#">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Scandinavian Clothing</h1>
+            <p>Minimalist | Sustainable | Timeless</p>
+            <a href="#products" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Shop Our Collection</h2>
+            <div class="product-grid">
+                <div class="product-card" data-id="1">
+                    <img src="placeholder1.jpg" alt="Cozy Sweater">
+                    <h3>Cozy Sweater</h3>
+                    <p>$99</p>
+                    <button class="btn-add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="2">
+                    <img src="placeholder2.jpg" alt="Winter Jacket">
+                    <h3>Winter Jacket</h3>
+                    <p>$149</p>
+                    <button class="btn-add-to-cart">Add to Cart</button>
+                </div>
+                <!-- Add more products here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We bring you the essence of Scandinavian fashion, focusing on quality, sustainability, and elegance.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you! Fill out the form below, and we’ll get back to you as soon as possible.</p>
+        <form id="contact-form">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NordicWear. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
