@@ -1,16 +1,15 @@
-## Hi there 👋
+# EasyAirFlow
 
-<!--
-**EasyAirFlow/EasyAirFlow** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A lightweight, static website for EasyAirFlow showcasing products and services.
 
-Here are some ideas to get you started:
+## Features
+- Responsive design
+- Secure payment integration
+- Hosted on GitHub Pages
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## How to Use
+1. Clone the repository.
+2. Open `index.html` in a browser.
+
+## License
+MIT
