@@ -1,41 +1,40 @@
 
-body {
-    font-family: Arial, sans-serif;
+body, html {
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 header {
-    background: #007BFF;
+    background-color: #007bff;
     color: white;
     padding: 10px 20px;
-    text-align: center;
 }
 
-.product-introduction, .product-features, .call-to-action {
-    margin: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.product-image {
+.hero img {
     width: 100%;
-    max-width: 300px;
-    display: block;
-    margin: 0 auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.features, .testimonials {
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
 footer {
-    text-align: center;
-    padding: 10px 20px;
-    background: #ddd;
+    padding: 10px;
+    background-color: #ddd;
+    color: #333;
 }
