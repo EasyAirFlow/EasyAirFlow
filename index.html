@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="da">
 
@@ -9,43 +8,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<style>
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        background-color: #333;
-        color: #fff;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    .icon-button {
-        background-color: #333;
-        border: none;
-        border-radius: 50%;
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-
-    .icon-button img {
-        height: 24px;
-    }
-
-    .icon-button:hover {
-        transform: scale(1.1);
-    }
-</style>
 
 <body>
     <!-- Header -->
-    <div id="header-placeholder"></div>
+    <link rel="stylesheet" href="styles.css">
+    <div class="icons">
+        <button class="icon-button" id="menuButton">
+            <img src='images/menylines.webp' alt='Menu'>
+        </button>
+        <div id="sideMenu" class="side-menu">
+            <button id="closeMenuButton">&times;</button>
+            <a href="index.html">Startside</a>
+            <a href="produkter.html">Produkter</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="omos.html">Om os</a>
+        </div>
+    </div>
+    <a href="index.html" class="logo" style="text-decoration: none; color: #fff;">EasyAirFlow</a>
+    <div class="icons">
+        <button class="icon-button">
+            <img src='images/searchicon.png' alt='Søg'>
+        </button>
+        <button class="icon-button">
+            <img src='images/profileicon.webp' alt='Profil'>
+        </button>
+        <button class="icon-button">
+            <img src='images/shoppingcart.png' alt='Indkøbskurv'>
+        </button>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -97,40 +87,6 @@
 
     <!-- Scroll til top-knap -->
     <button class="scroll-top" id="scrollTopBtn">&#8679;</button>
-
-    <script src="menu.js"></script>
-    <script>
-        // Load the header content and dynamically add CSS for header
-        document.addEventListener("DOMContentLoaded", async function() {
-            try {
-                await loadHeader();
-                addHeaderCSS();
-            } catch (error) {
-                console.error('There has been a problem with your fetch operation:', error);
-            }
-        });
-    
-        // Function to load the header HTML
-        async function loadHeader() {
-            const response = await fetch("header.html");
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.text();
-            document.getElementById("header-placeholder").innerHTML = data;
-        }
-    
-        // Function to add the CSS for the header if not already present
-        function addHeaderCSS() {
-            if (!document.querySelector('link[href="header.css"]')) {
-                const link = document.createElement("link");
-                link.rel = "stylesheet";
-                link.href = "header.css"; // Ensure this path is correct
-                document.head.appendChild(link);
-            }
-        }
-    </script>
-    
 </body>
 
 </html>
