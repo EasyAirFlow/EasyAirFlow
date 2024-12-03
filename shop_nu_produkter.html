@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Nu - EasyAirFlow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Product Section -->
+    <section class="product-container">
+        <!-- Mundtape Product -->
+        <div class="product-card">
+            <img src="images/mundtape.PNG" alt="Mundtape">
+            <h3>Mundtape</h3>
+            <p>Forbedr din nattesøvn ved at fremme nasal vejrtrækning.</p>
+            <p style="font-size: 1.2rem; font-weight: bold;">30 stk.</p>
+            <p style="font-size: 1.5rem; color: #ff6f61; margin: 1rem 0;">249,99 kr</p>
+            <button class="buy-button">Føj til kurv</button>
+        </div>
+
+        <!-- Næsetape Product -->
+        <div class="product-card">
+            <img src="images/næsetape.PNG" alt="Næsetape">
+            <h3>Næsetape</h3>
+            <p>Få bedre luftstrøm gennem næsen og optimer din vejrtrækning.</p>
+            <p style="font-size: 1.2rem; font-weight: bold;">30 stk.</p>
+            <p style="font-size: 1.5rem; color: #ff6f61; margin: 1rem 0;">199,99 kr</p>
+            <button class="buy-button">Føj til kurv</button>
+        </div>
+
+        <!-- Kombopakke Product -->
+        <div class="product-card" style="border: 2px solid #ff6f61;">
+            <img src="images/combo.PNG" alt="Kombopakke">
+            <h3>Kombopakke: Mundtape + Næsetape</h3>
+            <p>Få begge produkter til en samlet pris og optimer din vejrtrækning døgnet rundt.</p>
+            <p style="font-size: 1.2rem; font-weight: bold;">60 stk. i alt</p>
+            <p style="font-size: 1.5rem; color: #ff6f61; margin: 1rem 0;">399,99 kr</p>
+            <button class="buy-button">Føj til kurv</button>
+        </div>
+    </section>
+
+    <script src="./menu.js"></script>
+    <script>
+        // Load the header content
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("header.html")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById("header-placeholder").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>
