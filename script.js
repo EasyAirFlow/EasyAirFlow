@@ -1,4 +1,15 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    window.onscroll = () => {
+        if (window.scrollY > 200) {
+            scrollTopBtn.style.display = 'block';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    };
 
-document.getElementById('buy-now').addEventListener('click', function() {
-    alert('Thank you for your interest! Please proceed to checkout.');
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });

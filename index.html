@@ -1,41 +1,316 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>EasyAirFlow</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon-button {
+            background-color: #333;
+            border: none;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .icon-button img {
+            height: 24px;
+        }
+
+        .icon-button:hover {
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background: url('images/mundtape.PNG') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            color: #fff;
+            max-width: 90%;
+        }
+
+        .cta-button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #e65a50;
+        }
+
+        .branding, .reviews {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .branding-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .branding-grid img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .reviews-slider {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .review {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-links, .social-media {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        .footer-links a, .social-media a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .scroll-top:hover {
+            background-color: #e65a50;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            .icons {
+                margin-bottom: 1rem;
+            }
+
+            .logo {
+                text-align: center;
+            }
+        }
+
+        #sideMenu {
+            position: fixed;
+            left: -300px;
+            top: calc(1rem + 60px);
+            height: calc(100% - 60px);
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transition: left 0.3s ease;
+            padding-top: 2rem;
+        }
+
+        #sideMenu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        #sideMenu a:hover {
+            background-color: #555;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        #closeMenuButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
+
 <body>
+    <!-- Header -->
     <header>
-        <h1>EasyAirFlow</h1>
+        <div class="icons">
+            <button class="icon-button" id="menuButton">
+                <img src='images/menylines.webp' alt='Menu'>
+            </button>
+            <div id="sideMenu" class="side-menu">
+                <button id="closeMenuButton">&times;</button>
+                <a href="index.html">Startside</a>
+                <a href="produkter.html">Produkter</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="omos.html">Om os</a>
+            </div>
+        </div>
+        <a href="index.html" class="logo" style="text-decoration: none; color: #fff;">EasyAirFlow</a>
+        <div class="icons">
+            <button class="icon-button">
+                <img src='images/searchicon.png' alt='Søg'>
+            </button>
+            <button class="icon-button">
+                <img src='images/profileicon.webp' alt='Profil'>
+            </button>
+            <button class="icon-button">
+                <img src='images/shoppingcart.png' alt='Indkøbskurv'>
+            </button>
+        </div>
     </header>
-    
-    <main>
-        <section class="hero">
-            <img src="product-image.jpg" alt="EasyAirFlow Tape" class="product-image">
-            <button id="buy-now">Buy Now - $19.99</button>
-        </section>
 
-        <section class="features">
-            <h2>Why EasyAirFlow?</h2>
-            <ul>
-                <li>Enhances nasal breathing</li>
-                <li>Reduces snoring effectively</li>
-                <li>Sleek and comfortable design</li>
-            </ul>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Velkommen til EasyAirFlow - Optimer din vejrtrækning</h1>
+            <button class="cta-button">Shop Nu</button>
+        </div>
+    </section>
 
-        <section class="testimonials">
-            <p>"A night without snoring, finally!" - Jane Doe</p>
-        </section>
-    </main>
+    <!-- Branding Sektion -->
+    <section class="branding">
+        <h2>Om EasyAirFlow</h2>
+        <p>Vores mission er at hjælpe dig med at optimere din vejrtrækning ved hjælp af innovativt design. Bæredygtighed, enkelhed og effektivitet er vores kerneværdier.</p>
+        <div class="branding-grid">
+            <img src="images/branding1.jpg" alt="Billede 1">
+            <img src="images/branding2.jpg" alt="Billede 2">
+            <img src="images/branding3.jpg" alt="Billede 3">
+        </div>
+    </section>
 
+    <!-- Kundeanmeldelser -->
+    <section class="reviews">
+        <h2>Hvad vores kunder siger</h2>
+        <div class="reviews-slider">
+            <div class="review">"Fantastisk kvalitet og design!"</div>
+            <div class="review">"Jeg sover meget bedre takket være EasyAirFlow."</div>
+            <div class="review">"Lever virkelig op til forventningerne!"</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 EasyAirFlow. All rights reserved.</p>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#">Privatlivspolitik</a></li>
+                <li><a href="#">Handelsbetingelser</a></li>
+            </ul>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+            <form class="newsletter">
+                <input type="email" placeholder="Tilmeld dig vores nyhedsbrev">
+                <button type="submit">Tilmeld</button>
+            </form>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scroll til top-knap -->
+    <button class="scroll-top" id="scrollTopBtn">&#8679;</button>
+
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const sideMenu = document.getElementById('sideMenu');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+
+        menuButton.addEventListener('click', () => {
+            if (getComputedStyle(sideMenu).left === '-300px') {
+                sideMenu.style.left = '0';
+            } else {
+                sideMenu.style.left = '-300px';
+            }
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            sideMenu.style.left = '-300px';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menuButton.contains(event.target) && !sideMenu.contains(event.target) && sideMenu.style.left === '0px') {
+                sideMenu.style.left = '-300px';
+            }
+        });
+    </script>
 </body>
+
 </html>
