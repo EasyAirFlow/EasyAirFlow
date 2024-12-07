@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-lines {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 40px; /* Adjust the height to fit header size */
+}
+
+.menu-lines a {
+    display: inline-block;
+    width: 24px;
+    height: 100%;
+}
+
+.menu-lines .icon {
+    width: 24px;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo {
+    flex: 2;
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.icons a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.icons .icon {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+}
+
+.cart-page {
+    padding: 20px;
+    text-align: center;
+}
+
+.cart-section {
+    margin-top: 40px;
+}
+
+.cart-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#cart-list li {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#total-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+button:active {
+    transform: scale(0.95);
+}
