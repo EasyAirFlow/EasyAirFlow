@@ -112,10 +112,17 @@ body {
     font-weight: 500;
     display: block;
     transition: 0.3s;
+    outline: none;
 }
 
 .side-menu a:hover {
     color: #f1f1f1;
+    transform: scale(1.05);
+}
+
+.side-menu a:active {
+    transform: scale(0.95);
+    transition: 0.1s;
 }
 
 /* Add overlay to detect clicks outside menu */
@@ -130,35 +137,21 @@ body {
     display: none; /* Initially hidden */
 }
 
-/* Responsive adjustments for iPhone */
-@media (max-width: 600px) {
-    .header {
-        padding: 10px;
-    }
+/* Remove blue outline when buttons or links are clicked */
+a, button {
+    outline: none;
+}
 
-    .logo h1 {
-        font-size: 18px;
-        letter-spacing: 0.8px;
-    }
+/* Hover effect for all buttons */
+button, a {
+    transition: all 0.3s ease;
+}
 
-    .icons a {
-        width: 20px;
-        height: 20px;
-    }
+button:hover, a:hover {
+    transform: scale(1.05);
+}
 
-    .menu-lines .icon {
-        width: 20px;
-    }
-
-    .side-menu a {
-        font-size: 16px;
-    }
-
-    .side-menu {
-        padding-top: 50px;
-    }
-
-    .side-menu .close-btn {
-        font-size: 20px;
-    }
+button:active, a:active {
+    transform: scale(0.95);
+    transition: 0.1s;
 }
