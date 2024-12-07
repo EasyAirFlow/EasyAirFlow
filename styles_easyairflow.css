@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-lines {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 40px; /* Adjust the height to fit header size */
+}
+
+.menu-lines a {
+    display: inline-block;
+    width: 24px;
+    height: 100%;
+}
+
+.menu-lines .icon {
+    width: 24px;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo {
+    flex: 2;
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.icons a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.icons .icon {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.side-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #f1f1f1;
+}

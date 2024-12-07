@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyAirFlow</title>
+    <link rel="stylesheet" href="styles_easyairflow.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu-lines">
+            <a href="#menu" onclick="toggleMenu()">
+                <img src="images/menylines.webp" alt="Menu" class="icon">
+            </a>
+        </div>
+        <div class="logo">
+            <a href="header_easyairflow.html">
+                <h1>EasyAirFlow</h1>
+            </a>
+        </div>
+        <div class="icons">
+            <a href="#search">
+                <img src="images/searchicon.png" alt="Search" class="icon">
+            </a>
+            <a href="#profile">
+                <img src="images/profileicon.webp" alt="Profile" class="icon">
+            </a>
+            <a href="#cart">
+                <img src="images/shoppingcart.png" alt="Cart" class="icon">
+            </a>
+        </div>
+    </header>
+
+    <nav id="side-menu" class="side-menu">
+        <ul>
+            <button class="close-btn" onclick="toggleMenu()">X</button>
+            <li><a href="header_easyairflow.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#usage">Usage</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            if (menu.style.width === '250px') {
+                menu.style.width = '0';
+            } else {
+                menu.style.width = '250px';
+            }
+        }
+    </script>
+</body>
+</html>
