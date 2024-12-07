@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyAirFlow</title>
     <link rel="stylesheet" href="styles_easyairflow.css">
 </head>
+
 <body>
+    <div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
     <header class="header">
         <div class="menu-lines">
             <a href="#menu" onclick="toggleMenu()">
@@ -32,25 +35,29 @@
     </header>
 
     <nav id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">X</button>
         <ul>
-            <button class="close-btn" onclick="toggleMenu()">X</button>
             <li><a href="header_easyairflow.html">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#usage">Usage</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <script>
         function toggleMenu() {
             const menu = document.getElementById('side-menu');
+            const overlay = document.getElementById('menu-overlay');
             if (menu.style.width === '250px') {
                 menu.style.width = '0';
+                overlay.style.display = 'none';
             } else {
                 menu.style.width = '250px';
+                overlay.style.display = 'block';
             }
         }
     </script>
 </body>
+
 </html>

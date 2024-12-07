@@ -43,7 +43,7 @@ body {
 
 .logo h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 20px;
     color: #333;
     font-weight: 700;
     letter-spacing: 1px;
@@ -54,17 +54,17 @@ body {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 10px;
 }
 
 .icons a {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
 }
 
 .icons .icon {
-    width: 30px;
+    width: 24px;
     height: auto;
     cursor: pointer;
 }
@@ -108,7 +108,7 @@ body {
 .side-menu a {
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     display: block;
     transition: 0.3s;
@@ -116,4 +116,49 @@ body {
 
 .side-menu a:hover {
     color: #f1f1f1;
+}
+
+/* Add overlay to detect clicks outside menu */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; /* Initially hidden */
+}
+
+/* Responsive adjustments for iPhone */
+@media (max-width: 600px) {
+    .header {
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+        letter-spacing: 0.8px;
+    }
+
+    .icons a {
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu-lines .icon {
+        width: 20px;
+    }
+
+    .side-menu a {
+        font-size: 16px;
+    }
+
+    .side-menu {
+        padding-top: 50px;
+    }
+
+    .side-menu .close-btn {
+        font-size: 20px;
+    }
 }
