@@ -54,8 +54,8 @@
 
 .icons a {
     display: inline-block;
-    width: 40px; /* Larger icon container */
-    height: 40px; /* Increased size */
+    width: 30px; /* Larger icon container */
+    height: auto; /* Increased size */
 }
 
 .icons .icon {
