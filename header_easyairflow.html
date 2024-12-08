@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyAirFlow</title>
     <link rel="stylesheet" href="styles_easyairflow.css">
+    <script src="js/toggle_menu.js"></script>
 </head>
 
 <body>
@@ -44,20 +45,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('side-menu');
-            const overlay = document.getElementById('menu-overlay');
-            if (menu.style.width === '250px') {
-                menu.style.width = '0';
-                overlay.style.display = 'none';
-            } else {
-                menu.style.width = '250px';
-                overlay.style.display = 'block';
-            }
-        }
-    </script>
 </body>
 
 </html>

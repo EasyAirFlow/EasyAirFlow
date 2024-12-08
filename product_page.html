@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - EasyAirFlow</title>
     <link rel="stylesheet" href="product_page.css">
+    <script src="js/add_to_cart.js" defer></script>
+    <script src="js/toggle_menu.js" defer></script>
 </head>
 
 <body>
@@ -32,6 +34,17 @@
             </a>
         </div>
     </header>
+
+    <nav id="side-menu" class="side-menu">
+        <button class="close-btn" onclick="toggleMenu()">X</button>
+        <ul>
+            <li><a href="header_easyairflow.html">Home</a></li>
+            <li><a href="product_page.html">Products</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <main class="product-page">
         <section class="product-list">
@@ -89,31 +102,6 @@
     <footer class="footer">
         <p>&copy; 2024 EasyAirFlow. All rights reserved.</p>
     </footer>
-
-    <script>
-        function addToCart(productName, productPrice) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ name: productName, price: productPrice });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${productName} added to cart!`);
-            displayCart();
-        }
-
-        function displayCart() {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartList = document.getElementById('cart-list');
-            cartList.innerHTML = cart.map(item => `<li>${item.name} - $${item.price.toFixed(2)}</li>`).join('');
-        }
-
-        function clearCart() {
-            localStorage.removeItem('cart');
-            displayCart();
-            alert('Cart cleared!');
-        }
-
-        // Initialize cart display on page load
-        document.addEventListener('DOMContentLoaded', displayCart);
-    </script>
 </body>
 
 </html>
