@@ -96,9 +96,9 @@ const CheckoutCart = {
         if (containsComboPackage) {
             window.location.href = "https://buy.stripe.com/7sIbKO5Qh8mb4jmbIJ";
         } else if (containsSleepTape) {
-            window.location.href = "https://yourwebsite.com/sleep-tape-checkout";
+            window.location.href = "https://buy.stripe.com/cN2aGK5Qh59Z17a8wy";
         } else if (containsNasalStrips) {
-            window.location.href = "https://yourwebsite.com/nasal-strips-checkout";
+            window.location.href = "https://buy.stripe.com/cN23ei2E58mbeY06or";
         } else {
             alert("No valid products in the cart!");
         }
