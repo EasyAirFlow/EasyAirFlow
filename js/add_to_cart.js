@@ -20,7 +20,8 @@ function displayCart() {
     if (!cartList) return;
 
     cartList.innerHTML = cart
-        .map(item => `<li>${item.name} - $${item.price.toFixed(2)} x ${item.quantity}</li>`)
+        .map(item => `<li style="list-style: none; padding: 0; margin: 0;">${item.name} - $${item.price.toFixed(2)} x ${item.quantity}</li>`)
+
         .join('');
 }
 

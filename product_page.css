@@ -129,7 +129,6 @@ body {
     transition: 0.1s;
 }
 
-/* Add overlay to detect clicks outside menu */
 .overlay {
     position: fixed;
     top: 0;
@@ -178,6 +177,7 @@ button:active, a:active {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .product {
@@ -212,17 +212,17 @@ button:active, a:active {
 }
 
 .product .quantity {
-    font-size: 22px; /* Double the original size */
+    font-size: 22px;
     margin: 10px 0;
 }
 
 .product .usageTime {
-    font-size: 15px; /* Double the original size */
+    font-size: 15px;
     margin: 10px 0;
 }
 
 .product .price {
-    font-size: 32px; /* Double the original size */
+    font-size: 32px;
     font-weight: bold;
     margin: 10px 0;
 }
@@ -259,4 +259,47 @@ button:active, a:active {
     width: 45%; /* Scale images to fit inside the box */
     height: auto;
     border-radius: 10px;
+}
+
+.cart-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cart-section button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-section button:hover {
+    background-color: #555;
+}
+
+.cart-section button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .individual-products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+    }
+
+    .combo-package .product {
+        width: 90%;
+    }
+
+    .combo-package .product-combined-image img {
+        width: 40%;
+    }
 }

@@ -30,7 +30,7 @@ const CheckoutCart = {
                         </div>
                     </div>
                     <div style="flex: 1; text-align: center;">
-                        <img src="${this.productImages[item.name]}" alt="${item.name}" class="cart-item-image" style="width: 80px; height: auto; margin-bottom: 10px;">
+                        <img src="${this.productImages[item.name]}" alt="${item.name}" class="cart-item-image" style="width: 180px; height: auto; margin-bottom: 10px;">
                     </div>
                 </li>
             `)
