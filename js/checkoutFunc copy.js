@@ -19,24 +19,7 @@ const CheckoutCart = {
 
         cartList.innerHTML = cart
             .map((item, index) => `
-                <li class="cart-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 10px; position: relative;">
-                    <!-- Remove button -->
-                    <button onclick="CheckoutCart.removeProduct(${index})" style="
-                        position: absolute;
-                        top: 5px;
-                        left: 5px;
-                        background: none;
-                        color: black;
-                        border: 0px solid black;
-                        border-radius: 50%;
-                        width: 30px;
-                        height: 30px;
-                        font-size: 16px;
-                        cursor: pointer;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    ">X</button>
+                <li class="cart-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 10px;">
                     <div style="flex: 2;">
                         <h3>${item.name}</h3>
                         <p>Price: $${item.price.toFixed(2)}</p>
@@ -63,15 +46,6 @@ const CheckoutCart = {
             cart[index].quantity = Math.max(0, cart[index].quantity + delta);
             localStorage.setItem('cart', JSON.stringify(cart));
             this.displayCartCheckOut();
-        }
-    },
-
-    removeProduct(index) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        if (cart[index]) {
-            cart.splice(index, 1); // Remove the product from the cart
-            localStorage.setItem('cart', JSON.stringify(cart));
-            this.displayCartCheckOut(); // Re-render the cart
         }
     },
 
