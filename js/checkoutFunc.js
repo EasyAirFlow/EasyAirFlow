@@ -2,7 +2,7 @@ const CheckoutCart = {
     productImages: {
         "Sleep Tape": "images/mundtape.PNG",
         "Nasal Strips": "images/næsetape.PNG",
-        "Sleep & Nasal Tape Package": "images/combopack.PNG"
+        "Sleep & Nasal Tape Package": "images/combopack.png"
     },
 
     displayCartCheckOut() {
