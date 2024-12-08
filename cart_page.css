@@ -1,6 +1,10 @@
 body {
     margin: 0;
     font-family: 'Patrick Hand', cursive;
+    -webkit-tap-highlight-color: transparent; /* Remove blue highlight globally */
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    -o-tap-highlight-color: transparent;
 }
 
 .header {
@@ -16,7 +20,7 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    height: 40px; /* Adjust the height to fit header size */
+    height: 40px;
 }
 
 .menu-lines a {
@@ -125,7 +129,6 @@ body {
     transition: 0.1s;
 }
 
-/* Add overlay to detect clicks outside menu */
 .overlay {
     position: fixed;
     top: 0;
@@ -134,7 +137,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    display: none; /* Initially hidden */
+    display: none;
 }
 
 .cart-page {
@@ -143,7 +146,7 @@ body {
 }
 
 .cart-section {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .cart-section h2 {
@@ -155,19 +158,25 @@ body {
     list-style: none;
     padding: 0;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 90%;
 }
 
 #cart-list li {
-    padding: 10px;
-    margin: 5px 0;
+    padding: 15px;
+    margin: 10px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #f8f9fa;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item div {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .cart-summary {
@@ -176,7 +185,7 @@ body {
 }
 
 #total-price {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -203,8 +212,8 @@ button:active {
 .quantity-controls {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
+    justify-content: center;
+    gap: 10px;
 }
 
 .quantity-controls button {
@@ -228,6 +237,32 @@ button:active {
 .quantity-controls span {
     font-size: 16px;
     font-weight: bold;
-    margin: 0 5px;
 }
 
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-page {
+        padding: 10px;
+    }
+
+    #cart-list li {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .quantity-controls {
+        gap: 5px;
+    }
+
+    .cart-summary {
+        margin-top: 15px;
+    }
+}
