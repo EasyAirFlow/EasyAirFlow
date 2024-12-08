@@ -2,54 +2,22 @@
 <html lang="en">
 
 <head>
+    <!-- Used for the whole sites HTML -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - EasyAirFlow</title>
-    <link rel="stylesheet" href="bodyCssBlueRemove.css">
-    <link rel="stylesheet" href="headerStyle.css">
-    <link rel="stylesheet" href="cart_page.css">
+    <title>EasyAirFlow - Cart</title>
+    <link rel="stylesheet" href="css/bodyCssBlueRemove.css">
+    <link rel="stylesheet" href="css/headerStyle.css">
+    <script src="js/header_template.js" defer></script>
     <script src="js/toggle_menu.js" defer></script>
+
+    <!-- Specific for this site -->
+    <link rel="stylesheet" href="css/cart_page.css">
     <script src="js/add_to_cart.js" defer></script>
     <script src="js/checkoutFunc.js" defer></script>
 </head>
 
 <body>
-    <div id="menu-overlay" class="overlay" onclick="toggleMenu()"></div>
-    <header class="header">
-        <div class="menu-lines">
-            <a href="#menu" onclick="toggleMenu()">
-                <img src="images/menylines.webp" alt="Menu" class="icon">
-            </a>
-        </div>
-        <div class="logo">
-            <a href="home_page.html">
-                <h1>EasyAirFlow</h1>
-            </a>
-        </div>
-        <div class="icons">
-            <a href="search.html">
-                <img src="images/searchicon.png" alt="Search" class="icon">
-            </a>
-            <a href="profile.html">
-                <img src="images/profileicon.webp" alt="Profile" class="icon">
-            </a>
-            <a href="cart_page.html">
-                <img src="images/shoppingcart.png" alt="Cart" class="icon">
-            </a>
-        </div>
-    </header>
-
-    <nav id="side-menu" class="side-menu">
-        <button class="close-btn" onclick="toggleMenu()">X</button>
-        <ul>
-            <li><a href="home_page.html">Home</a></li>
-            <li><a href="product_page.html">Products</a></li>
-            <li><a href="#usage">Usage</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <main class="cart-page">
         <section class="cart-section">
             <h2>Your Cart</h2>

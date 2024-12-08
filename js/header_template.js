@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const headerContainer = document.createElement('div'); // Create a container for the header
 
-    fetch('header_template.html') // Load the template file
+    fetch('html_templates/header_template.html') // Load the template file
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to load header template.');
