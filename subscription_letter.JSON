@@ -1,0 +1,12 @@
+{
+    "subscribers": [
+        {
+            "email": "example1@example.com",
+            "date": "2024-12-08"
+        },
+        {
+            "email": "example2@example.com",
+            "date": "2024-12-08"
+        }
+    ]
+}
