@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+    -webkit-tap-highlight-color: transparent; /* Remove blue highlight globally */
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    -o-tap-highlight-color: transparent;
+}

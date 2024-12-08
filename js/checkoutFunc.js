@@ -79,6 +79,29 @@ const CheckoutCart = {
         localStorage.removeItem('cart');
         this.displayCartCheckOut();
         alert('Cart cleared!');
+    },
+
+    proceedToCheckout() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        const containsSleepTape = cart.some(item => item.name === "Sleep Tape");
+        const containsNasalStrips = cart.some(item => item.name === "Nasal Strips");
+        const containsComboPackage = cart.some(item => item.name === "Sleep & Nasal Tape Package");
+
+        if (containsComboPackage) {
+            window.location.href = "https://buy.stripe.com/7sIbKO5Qh8mb4jmbIJ";
+        } else if (containsSleepTape) {
+            window.location.href = "https://yourwebsite.com/sleep-tape-checkout";
+        } else if (containsNasalStrips) {
+            window.location.href = "https://yourwebsite.com/nasal-strips-checkout";
+        } else {
+            alert("No valid products in the cart!");
+        }
     }
 };
 

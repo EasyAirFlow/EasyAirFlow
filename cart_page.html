@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - EasyAirFlow</title>
+    <link rel="stylesheet" href="bodyCssBlueRemove.css">
+    <link rel="stylesheet" href="headerStyle.css">
     <link rel="stylesheet" href="cart_page.css">
     <script src="js/toggle_menu.js" defer></script>
     <script src="js/add_to_cart.js" defer></script>
@@ -57,6 +59,7 @@
             <div class="cart-summary">
                 <p id="total-price-checkout">Total: $0.00</p>
                 <button onclick="CheckoutCart.clearCart()">Clear Cart</button>
+                <button onclick="CheckoutCart.proceedToCheckout()">Videre til kassen</button>
             </div>
         </section>
     </main>
