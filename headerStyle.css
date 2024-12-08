@@ -140,22 +140,3 @@ body {
     z-index: 999;
     display: none; /* Initially hidden */
 }
-
-/* Remove blue outline when buttons or links are clicked */
-a, button {
-    outline: none;
-}
-
-/* Hover effect for all buttons */
-button, a {
-    transition: all 0.3s ease;
-}
-
-button:hover, a:hover {
-    transform: scale(1.05);
-}
-
-button:active, a:active {
-    transform: scale(0.95);
-    transition: 0.1s;
-}
