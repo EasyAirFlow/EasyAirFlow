@@ -93,15 +93,23 @@ const CheckoutCart = {
         const containsNasalStrips = cart.some(item => item.name === "Nasal Strips");
         const containsComboPackage = cart.some(item => item.name === "Sleep & Nasal Tape Package");
 
-        if (containsComboPackage) {
-            window.location.href = "https://buy.stripe.com/7sIbKO5Qh8mb4jmbIJ";
+        if (containsNasalStrips && containsComboPackage && containsSleepTape) {
+            window.location.href = "https://buy.stripe.com/7sIbKO5Qh8mb4jmbIJ"; // All three
+        } else if (containsNasalStrips && containsComboPackage) {
+            window.location.href = "https://buy.stripe.com/aEU6qu4MdfOD2bedQU"; // Combo + Nasal Strips
+        } else if (containsComboPackage && containsSleepTape) {
+            window.location.href = "https://buy.stripe.com/fZeaGKbaBdGv3fieUZ"; // Combo + Sleep Tape
+        } else if (containsComboPackage) {
+            window.location.href = "https://buy.stripe.com/7sIbKO5Qh8mb4jmbIJ"; // Combo only
+        } else if (containsSleepTape && containsNasalStrips) {
+            window.location.href = "https://buy.stripe.com/7sIbKO5Qh8mb4jmbIJ"; // Sleep Tape + Nasal Strips
         } else if (containsSleepTape) {
-            window.location.href = "https://buy.stripe.com/cN2aGK5Qh59Z17a8wy";
+            window.location.href = "https://buy.stripe.com/cN2aGK5Qh59Z17a8wy"; // Sleep Tape only
         } else if (containsNasalStrips) {
-            window.location.href = "https://buy.stripe.com/cN23ei2E58mbeY06or";
+            window.location.href = "https://buy.stripe.com/cN23ei2E58mbeY06or"; // Nasal Strips only
         } else {
             alert("No valid products in the cart!");
-        }
+        }        
     }
 };
 
