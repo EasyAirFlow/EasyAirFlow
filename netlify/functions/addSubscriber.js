@@ -17,18 +17,22 @@ exports.handler = async (event) => {
         };
     }
 
-    const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Use environment variable
+    const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Secure token
     const repo = "EasyAirFlow/EasyAirFlow";
     const filePath = "subscription_letter.JSON";
 
     try {
-        // Fetch existing file
+        // Fetch existing file from GitHub
         const fileResponse = await fetch(
             `https://api.github.com/repos/${repo}/contents/${filePath}`,
             {
                 headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
             }
         );
+
+        if (!fileResponse.ok) {
+            throw new Error("Failed to fetch the file from GitHub.");
+        }
 
         const fileData = await fileResponse.json();
         const existingContent = JSON.parse(Buffer.from(fileData.content, "base64").toString());
@@ -39,13 +43,14 @@ exports.handler = async (event) => {
             date: new Date().toISOString(),
         });
 
+        // Prepare updated content
         const updatedContent = {
             message: "Add new subscriber",
             content: Buffer.from(JSON.stringify(existingContent, null, 2)).toString("base64"),
-            sha: fileData.sha,
+            sha: fileData.sha, // SHA ensures correct versioning
         };
 
-        // Push updated file to GitHub
+        // Update the file on GitHub
         const updateResponse = await fetch(
             `https://api.github.com/repos/${repo}/contents/${filePath}`,
             {
