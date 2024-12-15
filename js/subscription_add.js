@@ -20,7 +20,7 @@ function toggleAndSave() {
         // API code to save email
         fetch('https://api.github.com/repos/EasyAirFlow/EasyAirFlow/contents/subscription_letter.JSON', {
             headers: {
-                'Authorization': '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'
+                'Authorization': 'Bearer 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'
             }
         })
             .then(response => response.json())
@@ -41,7 +41,7 @@ function toggleAndSave() {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': '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'
+                        'Authorization': 'Bearer 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'
                     },
                     body: JSON.stringify(updatedContent)
                 });
