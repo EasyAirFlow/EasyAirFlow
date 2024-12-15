@@ -1,43 +1,54 @@
 import fetch from "node-fetch";
 
 export async function handler(event) {
+    console.log("Event received:", event);
+
     if (event.httpMethod !== "POST") {
+        console.error("Invalid HTTP method:", event.httpMethod);
         return {
             statusCode: 405,
             body: JSON.stringify({ error: "Method Not Allowed" }),
         };
     }
 
-    const { email } = JSON.parse(event.body);
-
-    if (!email) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify({ error: "Email is required." }),
-        };
-    }
-
-    const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const repo = "EasyAirFlow/EasyAirFlow";
-    const filePath = "subscription_letter.JSON";
-
     try {
-        // Fetch existing file from GitHub
+        const { email } = JSON.parse(event.body);
+        console.log("Parsed email:", email);
+
+        if (!email) {
+            console.error("Email is missing.");
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: "Email is required." }),
+            };
+        }
+
+        const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+        const repo = "EasyAirFlow/EasyAirFlow";
+        const filePath = "subscription_letter.JSON";
+
+        console.log("Fetching file from GitHub...");
         const fileResponse = await fetch(
             `https://api.github.com/repos/${repo}/contents/${filePath}`,
             {
                 headers: { Authorization: `Bearer ${GITHUB_TOKEN}` },
             }
         );
+        console.log("GitHub fetch status:", fileResponse.status);
 
         if (!fileResponse.ok) {
+            const errorText = await fileResponse.text();
+            console.error("Error fetching file from GitHub:", errorText);
             throw new Error("Failed to fetch the file from GitHub.");
         }
 
         const fileData = await fileResponse.json();
+        console.log("Fetched file data:", fileData);
+
         const existingContent = JSON.parse(
             Buffer.from(fileData.content, "base64").toString()
         );
+        console.log("Existing file content:", existingContent);
 
         // Add new subscriber
         existingContent.subscribers.push({
@@ -52,7 +63,7 @@ export async function handler(event) {
             sha: fileData.sha,
         };
 
-        // Update the file on GitHub
+        console.log("Updating file on GitHub...");
         const updateResponse = await fetch(
             `https://api.github.com/repos/${repo}/contents/${filePath}`,
             {
@@ -64,17 +75,21 @@ export async function handler(event) {
                 body: JSON.stringify(updatedContent),
             }
         );
+        console.log("GitHub update status:", updateResponse.status);
 
         if (!updateResponse.ok) {
+            const errorText = await updateResponse.text();
+            console.error("Error updating file on GitHub:", errorText);
             throw new Error("Failed to update the file on GitHub.");
         }
 
+        console.log("File updated successfully!");
         return {
             statusCode: 200,
             body: JSON.stringify({ message: "Subscriber added successfully." }),
         };
     } catch (error) {
-        console.error(error);
+        console.error("Error in addSubscriber function:", error);
         return {
             statusCode: 500,
             body: JSON.stringify({ error: "Internal Server Error." }),
