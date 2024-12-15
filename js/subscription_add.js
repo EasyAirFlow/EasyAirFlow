@@ -15,43 +15,27 @@ function toggleAndSave() {
             return;
         }
 
-        console.log("Validation Passed: Proceeding to save email");
+        console.log("Validation Passed: Sending email to backend");
 
-        // API code to save email
-        fetch('https://api.github.com/repos/EasyAirFlow/EasyAirFlow/contents/subscription_letter.JSON', {
+        // Send email to Netlify Function
+        fetch("/.netlify/functions/addSubscriber", {
+            method: "POST",
             headers: {
-                'Authorization': 'Bearer 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'
-            }
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
         })
-            .then(response => response.json())
-            .then(fileData => {
-                const existingContent = JSON.parse(atob(fileData.content));
-                existingContent.subscribers.push({
-                    email: email,
-                    date: new Date().toISOString()
-                });
-
-                const updatedContent = {
-                    message: 'Add new subscriber',
-                    content: btoa(JSON.stringify(existingContent)),
-                    sha: fileData.sha
-                };
-
-                return fetch('https://api.github.com/repos/EasyAirFlow/EasyAirFlow/contents/subscription_letter.JSON', {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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'
-                    },
-                    body: JSON.stringify(updatedContent)
-                });
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.error) {
+                    alert("Error: " + data.error);
+                } else {
+                    alert("Email saved successfully!");
+                    emailInput.value = ""; // Clear input field
+                    inputBox.style.display = "none"; // Hide input box after saving
+                }
             })
-            .then(() => {
-                alert("Email saved successfully!");
-                emailInput.value = ""; // Clear input field
-                inputBox.style.display = "none"; // Hide input box after saving
-            })
-            .catch(error => {
+            .catch((error) => {
                 console.error("Error saving email:", error);
                 alert("There was an error saving your email. Please try again later.");
             });
