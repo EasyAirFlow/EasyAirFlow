@@ -1,2 +1,23 @@
-# Local Netlify folder
-.netlify
+# Node.js dependencies
+node_modules/
+
+# Netlify local files
+.netlify/
+
+# System and editor files
+.DS_Store
+
+# Git and logs
+.git/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.log
+
+# List file
+listOfExcludes.txt
+
+# Generated files or templates (if not required)

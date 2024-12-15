@@ -1,6 +1,6 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-exports.handler = async (event) => {
+export async function handler(event) {
     if (event.httpMethod !== "POST") {
         return {
             statusCode: 405,
@@ -17,7 +17,7 @@ exports.handler = async (event) => {
         };
     }
 
-    const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Secure token
+    const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
     const repo = "EasyAirFlow/EasyAirFlow";
     const filePath = "subscription_letter.JSON";
 
@@ -35,7 +35,9 @@ exports.handler = async (event) => {
         }
 
         const fileData = await fileResponse.json();
-        const existingContent = JSON.parse(Buffer.from(fileData.content, "base64").toString());
+        const existingContent = JSON.parse(
+            Buffer.from(fileData.content, "base64").toString()
+        );
 
         // Add new subscriber
         existingContent.subscribers.push({
@@ -47,7 +49,7 @@ exports.handler = async (event) => {
         const updatedContent = {
             message: "Add new subscriber",
             content: Buffer.from(JSON.stringify(existingContent, null, 2)).toString("base64"),
-            sha: fileData.sha, // SHA ensures correct versioning
+            sha: fileData.sha,
         };
 
         // Update the file on GitHub
@@ -78,4 +80,4 @@ exports.handler = async (event) => {
             body: JSON.stringify({ error: "Internal Server Error." }),
         };
     }
-};
+}
