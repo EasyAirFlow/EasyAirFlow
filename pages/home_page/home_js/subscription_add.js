@@ -18,7 +18,7 @@ function toggleAndSave() {
         console.log("Validation Passed: Sending email to backend");
 
         // Send email to Netlify Function
-        fetch("../../.netlify/functions/addSubscriber", {
+        fetch("../../netlify/functions/addSubscriber", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
