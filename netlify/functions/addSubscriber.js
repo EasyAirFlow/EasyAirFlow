@@ -1,3 +1,5 @@
+console.log("GITHUB_TOKEN exists:", !!process.env.GITHUB_TOKEN);
+
 import fetch from "node-fetch";
 
 export async function handler(event) {
@@ -22,7 +24,7 @@ export async function handler(event) {
         body: JSON.stringify({ error: "Email is required." }),
       };
     }
-    
+
     console.log("GITHUB_TOKEN exists:", !!GITHUB_TOKEN); // Checks if the token is defined
 
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
