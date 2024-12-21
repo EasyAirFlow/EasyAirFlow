@@ -25,7 +25,7 @@ export async function handler(event) {
 
         const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
         const repo = "EasyAirFlow/EasyAirFlow";
-        const filePath = "subscription_letter.JSON";
+        const filePath = "/EasyAirFlow/client_Information/subscription_letter.JSON";
 
         console.log("Fetching file from GitHub...");
         const fileResponse = await fetch(

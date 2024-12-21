@@ -7,3 +7,8 @@
 
 [build]
   publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/pages/home_page/"
+  status = 200

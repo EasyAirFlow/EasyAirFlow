@@ -1,8 +1,8 @@
 const CheckoutCart = {
     productImages: {
-        "Sleep Tape": "images/mundtape.PNG",
-        "Nasal Strips": "images/næsetape.PNG",
-        "Sleep & Nasal Tape Package": "images/combopack.png"
+        "Sleep Tape": "../../templates/images_templates/mundtape.PNG",
+        "Nasal Strips": "../../templates/images_templates/næsetape.PNG",
+        "Sleep & Nasal Tape Package": "../../templates/images_templates/combopack.png"
     },
 
     displayCartCheckOut() {

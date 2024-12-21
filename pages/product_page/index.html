@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyAirFlow - Products</title>    
-    <link rel="stylesheet" href="css/bodyCssBlueRemove.css">
-    <link rel="stylesheet" href="css/headerStyle.css">
-    <script src="js/header_template.js" defer></script>
-    <script src="js/toggle_menu.js" defer></script>
+    <link rel="stylesheet" href="../../templates/css_templates/bodyCssBlueRemove.css">
+    <link rel="stylesheet" href="../../templates/css_templates/headerStyle.css">
+    <script src="../../templates/js_templates/header_template.js" defer></script>
+    <script src="../../templates/js_templates/toggle_menu.js" defer></script>
 
     <!-- Specific for this site -->
-    <link rel="stylesheet" href="css/product_page.css">
-    <script src="js/add_to_cart.js" defer></script>
+    <link rel="stylesheet" href="product_page.css">
+    <script src="product_js/add_to_cart.js" defer></script>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <!-- Individual Products -->
             <div class="individual-products">
                 <article class="product">
-                    <img src="images/mundtape.PNG" alt="Mouth Tape" class="product-image">
+                    <img src="../../templates/images_templates/mundtape.PNG" alt="Mouth Tape" class="product-image">
                     <h3>Sleep Tape</h3>
                     <p>Improve your sleep quality by promoting nasal breathing and reducing snoring.</p>
                     <p class="quantity">30x Sleep Tape</p>
@@ -34,7 +34,7 @@
                 </article>
 
                 <article class="product">
-                    <img src="images/næsetape.PNG" alt="Nasal Strips" class="product-image">
+                    <img src="../../templates/images_templates/næsetape.PNG" alt="Nasal Strips" class="product-image">
                     <h3>Nasal Strips</h3>
                     <p>Enhance your airflow and improve breathing during sleep or physical activity.</p>
                     <p class="quantity">30x Nasal Strips</p>
@@ -48,8 +48,8 @@
             <div class="combo-package">
                 <article class="product">
                     <div class="product-combined-image" style="display: flex; justify-content: center; align-items: center;">
-                        <img src="images/mundtape.PNG" alt="Mouth Tape" class="combined-image" style="margin-right: 10px;">
-                        <img src="images/næsetape.PNG" alt="Nasal Strips" class="combined-image">
+                        <img src="../../templates/images_templates/mundtape.PNG" alt="Mouth Tape" class="combined-image" style="margin-right: 10px;">
+                        <img src="../../templates/images_templates/næsetape.PNG" alt="Nasal Strips" class="combined-image">
                     </div>
                     <h3>Sleep & Nasal Tape Package</h3>
                     <p>Get the best of both worlds with this exclusive package deal.</p>
@@ -67,7 +67,7 @@
                 <!-- Cart items will be dynamically added here -->
             </ul>
             <button onclick="clearCart()">Clear Cart</button>
-            <button onclick="window.location.href='cart_page.html'">Go to Cart</button>
+            <button onclick="window.location.href='../cart_page/'">Go to Cart</button>
         </section>
     </main>
 
