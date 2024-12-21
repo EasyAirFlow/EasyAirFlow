@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 export async function handler(event) {
   console.log("Event received:", event);
 
+  // Ensure only POST requests are processed
   if (event.httpMethod !== "POST") {
     console.error("Invalid HTTP method:", event.httpMethod);
     return {
@@ -12,7 +13,7 @@ export async function handler(event) {
   }
 
   try {
-    const { email } = JSON.parse(event.body);
+    const { email } = JSON.parse(event.body); // Parse the request body
     console.log("Parsed email:", email);
 
     if (!email) {
@@ -23,14 +24,23 @@ export async function handler(event) {
       };
     }
 
-    const repo = "EasyAirFlow/EasyAirFlow";
-    const filePath = "/client_Information/subscription_letter.JSON";
+    const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Securely load the GitHub token from environment variables
+    if (!GITHUB_TOKEN) {
+      console.error("GITHUB_TOKEN is not defined in environment variables.");
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: "Server misconfiguration: Missing GITHUB_TOKEN" }),
+      };
+    }
 
-    // Debugging logs to see if it points to my Json file.
+    const repo = "EasyAirFlow/EasyAirFlow"; // GitHub repository
+    const filePath = "client_Information/subscription_letter.JSON"; // Path to the JSON file
+
     console.log("Debug Info:");
     console.log("Repository path:", repo);
     console.log("File path:", filePath);
 
+    // Fetch the file from GitHub
     console.log("Fetching file from GitHub...");
     const fileResponse = await fetch(
       `https://api.github.com/repos/${repo}/contents/${filePath}`,
@@ -49,12 +59,13 @@ export async function handler(event) {
     const fileData = await fileResponse.json();
     console.log("Fetched file data:", fileData);
 
+    // Decode and parse the existing content
     const existingContent = JSON.parse(
       Buffer.from(fileData.content, "base64").toString()
     );
     console.log("Existing file content:", existingContent);
 
-    // Add new subscriber
+    // Add the new subscriber
     existingContent.subscribers.push({
       email,
       date: new Date().toISOString(),
@@ -69,6 +80,7 @@ export async function handler(event) {
       sha: fileData.sha,
     };
 
+    // Update the file on GitHub
     console.log("Updating file on GitHub...");
     const updateResponse = await fetch(
       `https://api.github.com/repos/${repo}/contents/${filePath}`,
