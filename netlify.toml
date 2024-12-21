@@ -1,6 +1,6 @@
 [functions]
   node_bundler = "esbuild"
-  included_files = ["client_information/subscription_letter.JSON"]
+  included_files = ["client_Information/subscription_letter.JSON"]
 
 [functions.environment]
   AWS_LAMBDA_NODEJS_VERSION = "18"
