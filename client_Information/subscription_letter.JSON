@@ -1,12 +1,16 @@
 {
-    "subscribers": [
-        {
-            "email": "example1@example.com",
-            "date": "2024-12-08"
-        },
-        {
-            "email": "example2@example.com",
-            "date": "2024-12-08"
-        }
-    ]
+  "subscribers": [
+    {
+      "email": "example1@example.com",
+      "date": "2024-12-08"
+    },
+    {
+      "email": "example2@example.com",
+      "date": "2024-12-08"
+    },
+    {
+      "email": "ASD@ASD.DK",
+      "date": "2024-12-21T10:44:29.332Z"
+    }
+  ]
 }
