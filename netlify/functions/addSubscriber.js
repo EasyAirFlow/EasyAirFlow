@@ -22,6 +22,8 @@ export async function handler(event) {
         body: JSON.stringify({ error: "Email is required." }),
       };
     }
+    
+    console.log("GITHUB_TOKEN exists:", !!GITHUB_TOKEN); // Checks if the token is defined
 
     const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
     const repo = "EasyAirFlow/EasyAirFlow";
@@ -29,7 +31,6 @@ export async function handler(event) {
 
     // Debugging logs to see if it points to my Json file.
     console.log("Debug Info:");
-    console.log("GITHUB_TOKEN exists:", !!GITHUB_TOKEN); // Checks if the token is defined
     console.log("Repository path:", repo);
     console.log("File path:", filePath);
 
