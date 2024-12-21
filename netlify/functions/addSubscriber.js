@@ -1,5 +1,3 @@
-console.log("GITHUB_TOKEN exists:", !!process.env.GITHUB_TOKEN);
-
 import fetch from "node-fetch";
 
 export async function handler(event) {
@@ -25,9 +23,8 @@ export async function handler(event) {
       };
     }
 
+    const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Declare GITHUB_TOKEN here
     console.log("GITHUB_TOKEN exists:", !!GITHUB_TOKEN); // Checks if the token is defined
-
-    const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
     const repo = "EasyAirFlow/EasyAirFlow";
     const filePath = "/client_Information/subscription_letter.JSON";
 
