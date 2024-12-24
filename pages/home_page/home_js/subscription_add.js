@@ -18,7 +18,7 @@ function getCookie(name) {
   
     if (isSubscribed) {
       // Fetch and display the subscription form from a template
-      fetch("thanksletter_template.html")
+      fetch("/pages/home_page/thanksletter_template.html")
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to load the thanks template.");
@@ -33,7 +33,7 @@ function getCookie(name) {
         });
     } else {
       // Fetch and display the subscription form from a template
-      fetch("newsletter_template.html")
+      fetch("/pages/home_page/newsletter_template.html")
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to load the newsletter template.");
