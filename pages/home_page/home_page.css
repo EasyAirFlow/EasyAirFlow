@@ -48,3 +48,76 @@
     transform: scale(1.1); /* Further enlarge when clicked */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance the shadow effect */
 }
+
+.usage-container {
+    position: relative;
+    margin-top: 20px;
+    border-radius: 50px;
+    height: 50vh;
+    width: 95%;
+    overflow: hidden;
+    z-index: auto;
+    margin-left: auto;
+    margin-right: auto; /* Centers the container horizontally */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+    display: flex; /* Arrange items side by side */
+    flex-direction: row;
+    align-items: center; /* Align content vertically */
+    justify-content: space-between; /* Space between content */
+    gap: 20px; /* Space between elements */
+    padding: 20px;
+}
+
+.usage-container img {
+    width: 65%; /* Adjust to share space with text */
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.usage-container div {
+    width: 50%; /* Adjust width for text content */
+    text-align: center;
+}
+
+#usage-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#usage-about {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.usage-container:hover {
+    transform: scale(1.05); /* Slightly enlarge the container */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.usage-container:active {
+    transform: scale(1.1); /* Further enlarge when clicked */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance the shadow effect */
+}
+
+@media (max-width: 768px) {
+    .usage-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        height: auto;
+    }
+
+    .usage-container img {
+        width: 80%; /* Take more width on smaller screens */
+        margin-bottom: 20px; /* Add spacing below the image */
+    }
+
+    .usage-container div {
+        width: 100%; /* Allow text to take full width */
+        text-align: center;
+    }
+}

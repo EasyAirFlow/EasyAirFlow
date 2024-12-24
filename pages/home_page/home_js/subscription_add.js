@@ -53,21 +53,21 @@ function getCookie(name) {
   function toggleAndSave() {
     const inputBox = document.querySelector(".hidden-input");
     const emailInput = document.getElementById("subscriber-email");
-  
+
     // Toggle visibility
     if (inputBox.style.display === "none" || inputBox.style.display === "") {
-      inputBox.style.display = "block"; // Show the input box
+        inputBox.style.display = "block"; // Show the input box
     } else {
-      const email = emailInput.value.trim(); // Trim whitespace
-      const emailRegex = /^[^\s@]+@[^\s@]+\\.[^\s@]+$/;
-  
-      // Validate email
-      if (!email || !emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-      }
-  
-      console.log("Validation Passed: Sending email to backend");
+        const email = emailInput.value.trim(); // Trim whitespace
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Corrected regex
+
+        // Validate email
+        if (!email || !emailRegex.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        console.log("Validation Passed: Sending email to backend");
   
       // Send email to Netlify Function
       fetch("https://easyairflow.netlify.app/.netlify/functions/addSubscriber", {
