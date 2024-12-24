@@ -6,3 +6,8 @@ body {
     -ms-tap-highlight-color: transparent;
     -o-tap-highlight-color: transparent;
 }
+@media (max-width: 768px) {
+    body {
+        font-family: 'Raleway', sans-serif; /* Replace with your chosen font */
+    }
+}
