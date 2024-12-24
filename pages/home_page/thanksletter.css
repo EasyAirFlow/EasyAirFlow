@@ -1,0 +1,19 @@
+.hidden-input p {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.hidden-input a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.hidden-input a:hover {
+    color: #000000;
+    font-size: 1.2em;
+}

@@ -3,31 +3,27 @@
 
 <head>
     <!-- Used for the whole sites HTML -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EasyAirFlow - Home</title>
-    <link rel="stylesheet" href="../../templates/css_templates/bodyCssBlueRemove.css">
-    <link rel="stylesheet" href="../../templates/css_templates/headerStyle.css">
+    <link rel="stylesheet" href="../../templates/css_templates/bodyCssBlueRemove.css" />
+    <link rel="stylesheet" href="../../templates/css_templates/headerStyle.css" />
     <script src="../../templates/js_templates/header_template.js" defer></script>
     <script src="../../templates/js_templates/toggle_menu.js" defer></script>
 
     <!-- Specific for this site -->
-    <link rel="stylesheet" href="../../pages/home_page/home_page.css"> 
+    <link rel="stylesheet" href="../../pages/home_page/home_page.css" />
+    <link rel="stylesheet" href="../../pages/home_page/thanksletter.css" />
+    <link rel="stylesheet" href="../../pages/home_page/newsletter.css" />
     <!--Quick and dirty.. Direct path to insure to include css when called the _redirect file/ link-->
     <script src="../../pages/home_page/home_js/subscription_add.js" defer></script>
 </head>
 
 <body>
     <div class="cover-container">
-        <img src="../../templates/images_templates/mundtapecover.PNG" alt="Cover Image">
-        <div class="newsletter-container">
-            <div class="hidden-input">
-                <h2>Subscribe to Our Newsletter</h2>
-                <input type="email" id="subscriber-email" placeholder="Enter your email" required>
-                <br>
-                <!-- One button for toggling and saving -->
-        <button class="action-button" onclick="toggleAndSave()">Subscribe</button>
-            </div>
+        <img src="../../templates/images_templates/mundtapecover.PNG" alt="Cover Image" />
+        <div id="newsletter-container">
+            <!-- Newsletter content is dynamically loaded based on cookies -->
         </div>
     </div>
 </body>
