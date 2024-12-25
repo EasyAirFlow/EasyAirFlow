@@ -1,0 +1,270 @@
+/* General Footer Styling */
+.footer {
+  background-color: #ffffff; /* Black background */
+  color: #000000; /* White text */
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  text-align: center; /* Center all text horizontally */
+}
+
+/* Trustpilot Section */
+.trustpilot-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+#trustpilot-displayment {
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#trustpilot-displayment p {
+  margin: 0;
+}
+
+#Reviews {
+  font-weight: bold;
+  color: #000000; /* Highlighted number */
+}
+
+#trust-pilot-logo{
+  height: 24px;
+  position: relative; 
+  width: 50%; 
+  margin-left: -70px; 
+  margin-top: -5px; 
+  display: flex; 
+  overflow: hidden;
+  border: none;
+}
+
+/* Example Reviews */
+.trustpilot-widget div {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.trustpilot-widget div span {
+  font-size: 20px;
+  color: rgb(0, 182, 122);
+  font-weight: bold;
+}
+
+.trustpilot-widget div p {
+  margin-left: 0;
+  color: #555;
+}
+
+.trustpilot-widget a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s; /*HERE*/
+}
+
+.trustpilot-widget .trustpilot-displayment {
+  justify-content: center;
+  display: flex;
+  align-items: center; /* Vertically align items */
+  gap: 10px; /* Add spacing between items */
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Navigation Links */
+.footer-top-item-links {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-top-item-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-top-item-links ul li {
+  margin: 5px;
+}
+
+.footer-top-item-links ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-top-item-links ul li a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.footer-top-item-icon-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* DK SE Globe Button */
+.button--secondary {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 20px auto;
+}
+
+.button--secondary:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Payment Icons */
+.footer__payment {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer__payment img,
+.footer__payment svg {
+  height: 40px;
+  width: auto;
+}
+
+.footer__payment span {
+  color: rgba(0, 0, 0, 0.2); /* Blurred text */
+  font-size: 12px;
+}
+
+.footer
+
+/* Footer Text Sections */
+.footer-bottom-item-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-text {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-text a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .footer-top-item-links ul {
+    flex-direction: row;
+  }
+
+  .footer-bottom-item-container {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+
+  /* Trustpilot Section */
+  .trustpilot-widget .trustpilot-displayment {
+    
+    flex-direction: row; /* Stack vertically */
+    justify-content: center; /* Center items */
+    align-items: center; /* Align items horizontally */
+}
+}
+
+/* Footer Text Sections */
+.footer-bottom-item-container-mobile, .footer-bottom-item-container-desktop {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-bottom-item-container-mobile {
+  display: none;
+}
+
+.footer-bottom-item-container-desktop {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  text-align: left;
+}
+
+.footer-bottom-item-container-desktop .footer-item-section-left {
+  text-align: left;
+}
+
+.footer-bottom-item-container-desktop .footer-item-section-right {
+  text-align: right;
+}
+
+.footer-bottom-item-container-desktop .footer-item-section-center {
+    text-align: center;
+}
+
+.footer-item-section-right a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-item-section-right a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-item-container-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    text-align: left;
+    gap: 10px;
+  }
+
+   .footer-bottom-item-container-desktop {
+    display: none;
+  }
+
+  .footer-bottom-item-container-mobile  .footer-item-section-left {
+    text-align: left;
+  }
+
+  .footer-bottom-item-container-mobile  .footer-item-section-right {
+    text-align: right;
+  }
+}
