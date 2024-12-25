@@ -163,3 +163,14 @@ button:active, a:active {
     transform: scale(0.95);
     transition: 0.1s;
 }
+
+@media (max-width: 768px) {
+    .logo h1 {
+        margin: 0;
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+        color: #333;
+        font-weight: 900; /* Made font even bolder */
+        letter-spacing: 2px; /* Increased spacing for a bold look */
+        font-family: 'Patrick Hand', cursive;
+    }
+}
