@@ -120,4 +120,9 @@
         width: 100%; /* Allow text to take full width */
         text-align: center;
     }
+
+    .hidden-input {
+        width: 35vh;
+        height: 20vh;
+    }
 }

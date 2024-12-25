@@ -51,3 +51,31 @@
 .hidden-input button:active {
     transform: scale(0.95);
 }
+
+@media (max-width: 768px) {
+    #newsletter-container .action-button {
+        padding: 10px 20px; /* Scale down padding */
+        font-size: 14px; /* Scale down font size */
+        transition: padding 0.4s ease, font-size 0.4s ease; /* Smooth scaling */
+    }
+
+    .hidden-input h2 {
+        font-size: 2em; /* Scale down heading size */
+        transition: font-size 0.4s ease; /* Smooth resizing */
+    }
+
+    .hidden-input input[type="email"] {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 10px; /* Reduce padding */
+        font-size: 16px; /* Scale down font size */
+        margin-bottom: 0;
+        transition: width 0.4s ease, padding 0.4s ease, font-size 0.4s ease; /* Smooth resizing */
+    }
+
+    .hidden-input button {
+        margin-top: 0;
+        padding: 10px 0; /* Reduce button padding */
+        font-size: 14px; /* Scale down font size */
+        transition: padding 0.4s ease, font-size 0.4s ease; /* Smooth scaling */
+    }
+}
