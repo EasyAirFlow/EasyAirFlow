@@ -54,7 +54,7 @@
     margin-top: 20px;
     border-radius: 50px;
     height: 50vh;
-    width: 95%;
+    width: 85%;
     overflow: hidden;
     z-index: auto;
     margin-left: auto;
@@ -97,6 +97,9 @@
     transform: scale(1.05); /* Slightly enlarge the container */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
     z-index: 10; /* Ensure it appears above other elements */
+    border-width: 2px;   /* Thickness */
+    border-style: solid; /* Style */
+    border-color: rgb(0, 0, 0);  /* Color */
 }
 
 .usage-container:active {
@@ -106,13 +109,14 @@
 
 @media (max-width: 768px) {
     .usage-container {
+        transition: transform 0.3s, box-shadow 0.3s, border-width 0.3s; /* Smooth transitions */
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items */
         height: auto;
     }
 
     .usage-container img {
-        width: 80%; /* Take more width on smaller screens */
+        width: 95%; /* Take more width on smaller screens */
         margin-bottom: 20px; /* Add spacing below the image */
     }
 
@@ -124,5 +128,17 @@
     .hidden-input {
         width: 35vh;
         height: 20vh;
+    }
+
+    .usage-container.scroll-activated {
+        transform: scale(1.05); /* Slightly enlarge the container */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+        z-index: 10; /* Ensure it appears above other elements */
+        border-width: 2px;   /* Thickness */
+        border-style: solid; /* Style */
+        border-color: rgb(0, 0, 0);  /* Color */
+    }
+    .usage-container.commingSoon {
+        height: 400px;
     }
 }
