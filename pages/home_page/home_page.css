@@ -138,7 +138,7 @@
         border-style: solid; /* Style */
         border-color: rgb(0, 0, 0);  /* Color */
     }
-    .usage-container.commingSoon {
+    .usage-container.small {
         height: 400px;
     }
 }

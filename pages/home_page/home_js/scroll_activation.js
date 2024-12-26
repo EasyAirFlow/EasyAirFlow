@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       });
   }, {
-      threshold: 0.5 // Trigger when 50% of the container is visible
+      threshold: 0.7 // Trigger when 50% of the container is visible
   });
 
   usageContainers.forEach(container => observer.observe(container));
