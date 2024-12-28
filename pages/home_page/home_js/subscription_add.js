@@ -51,7 +51,7 @@ function getCookie(name) {
   
   // Function to toggle and save email subscription
   function toggleAndSave() {
-    const inputBox = document.querySelector(".hidden-input news");
+    const inputBox = document.querySelector(".hidden-input.news");
     const emailInput = document.getElementById("subscriber-email");
 
     // Toggle visibility
