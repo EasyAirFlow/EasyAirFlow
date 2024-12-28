@@ -42,7 +42,7 @@ async function validateDiscountCode(event) {
 
   try {
       // Send the discount code to the Netlify Function
-      const response = await fetch("/.netlify/functions/validateDiscountCode", {
+      const response = await fetch("https://easyairflow.netlify.app/.netlify/functions/validateDiscountCode", {
           method: "POST",
           headers: {
               "Content-Type": "application/json",
