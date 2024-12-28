@@ -53,10 +53,11 @@ async function validateDiscountCode(event) {
       // Provide feedback to the user
       const feedbackMessage = document.getElementById("discount-feedback");
       if (data.valid) {
-          feedbackMessage.textContent = "Congratulations! Your discount code is valid.";
+          feedbackMessage.textContent = "🎉 Congratulations! Your discount code is valid. Enjoy your discount!";
           feedbackMessage.style.color = "green";
+          discountInput.disabled = true; // Optional: Disable input after successful validation
       } else {
-          feedbackMessage.textContent = "Sorry, this discount code is not valid.";
+          feedbackMessage.textContent = "❌ Sorry, this discount code is not valid. Please try another.";
           feedbackMessage.style.color = "red";
       }
   } catch (error) {
