@@ -1,3 +1,9 @@
+// Utility to set a cookie
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString(); // Expiration date
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+}
+
 // Function to initialize the discount UI
 function initializeDiscount() {
   const discountContainer = document.getElementById("discount-container");
@@ -55,7 +61,10 @@ async function validateDiscountCode(event) {
       if (data.valid) {
           feedbackMessage.textContent = "🎉 Congratulations! Your discount code is valid. Enjoy your discount!";
           feedbackMessage.style.color = "green";
-          discountInput.disabled = true; // Optional: Disable input after successful validation
+          discountInput.disabled = true; // Disable input after successful validation
+
+          // Set a cookie with the discount code, valid for 30 days
+          setCookie("discountCode", discountCode, 30);
       } else {
           feedbackMessage.textContent = "❌ Sorry, this discount code is not valid. Please try another.";
           feedbackMessage.style.color = "red";
