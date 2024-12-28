@@ -34,7 +34,7 @@ export async function handler(event) {
     }
 
     const repo = "EasyAirFlow/EasyAirFlow"; // GitHub repository
-    const filePath = "client_Information/discounts.json"; // Path to the JSON file containing discount codes
+    const filePath = "client_Information/discounts.JSON"; // Path to the JSON file containing discount codes
 
     console.log("Debug Info:");
     console.log("Repository path:", repo);
