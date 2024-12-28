@@ -70,9 +70,10 @@ async function validateDiscountCode(event) {
           setTimeout(() => {
             feedbackMessage.textContent = "Applying Discount...";
             feedbackMessage.style.color = "blue";
-
-            // Redirect to the product page
-            window.location.href = "/pages/products/";
+            setTimeout(() => {
+              // Redirect to the product page
+              window.location.href = "/pages/product_page/";
+          }, 2000);
         }, 3000);
       } else {
           feedbackMessage.textContent = "❌ Sorry, this discount code is not valid. Please try another.";
