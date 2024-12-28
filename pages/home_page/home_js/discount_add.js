@@ -21,7 +21,7 @@ function initializeDiscount() {
 
           // Add event listener to the discount form submission
           const discountForm = document.getElementById("discount-form");
-          discountForm.addEventListener("submit", validateDiscountCode);
+          discountForm.addEventListener("submit-discountCode", validateDiscountCode);
       })
       .catch((error) => {
           console.error("Error loading discount template:", error);
@@ -65,6 +65,15 @@ async function validateDiscountCode(event) {
 
           // Set a cookie with the discount code, valid for 30 days
           setCookie("discountCode", discountCode, 30);
+          // Display "Applying Discount..." and redirect after 3 seconds
+
+          setTimeout(() => {
+            feedbackMessage.textContent = "Applying Discount...";
+            feedbackMessage.style.color = "blue";
+
+            // Redirect to the product page
+            window.location.href = "/pages/products/";
+        }, 3000);
       } else {
           feedbackMessage.textContent = "❌ Sorry, this discount code is not valid. Please try another.";
           feedbackMessage.style.color = "red";

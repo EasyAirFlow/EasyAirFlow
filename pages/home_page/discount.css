@@ -1,0 +1,100 @@
+.hidden-input.discount {
+    text-align: center; /* Center content */
+    width: 75%; /* Full-width for responsiveness */
+    margin-top: 20px 0;
+}
+
+.hidden-input.discount form {
+    display: inline-block; /* Center the form */
+    width: 90%; /* Full-width for responsiveness */
+    max-width: 400px; /* Limit maximum width */
+    padding: 15px;
+    border: 1px solid #ddd; /* Add a subtle border */
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.hidden-input.discount form:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.hidden-input.discount label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    text-align: center; /* Align label to the left */
+}
+
+.hidden-input.discount input[type="text"] {
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.hidden-input.discount input[type="text"]:focus {
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none; /* Remove default outline */
+}
+
+.hidden-input.discount button {
+    padding: 15px 25px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hidden-input.discount button:hover {
+    background-color: #555;
+}
+
+.hidden-input.discount button:active {
+    transform: scale(0.95); /* Shrink slightly when clicked */
+}
+
+.hidden-input.discount #discount-feedback {
+    margin-top: 15px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .hidden-input.discount {
+        margin: 10px 0;
+    }
+
+    .hidden-input.discount form {
+        padding: 10px;
+    }
+
+    .hidden-input.discount label {
+        font-size: 1em;
+    }
+
+    .hidden-input.discount input[type="text"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .hidden-input.discount button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .hidden-input.discount #discount-feedback {
+        font-size: 0.9em;
+    }
+}
