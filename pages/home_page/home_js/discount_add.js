@@ -21,7 +21,7 @@ function initializeDiscount() {
 
           // Add event listener to the discount form submission
           const discountForm = document.getElementById("discount-form");
-          discountForm.addEventListener("submit-discountCode", validateDiscountCode);
+          discountForm.addEventListener("submit", validateDiscountCode);
       })
       .catch((error) => {
           console.error("Error loading discount template:", error);
