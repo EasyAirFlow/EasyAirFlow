@@ -6,3 +6,8 @@
 .new-price {
     font-weight: bold;
 }
+
+.showing_discount_customer {
+    font-weight: 100;
+    text-align: right;
+}
