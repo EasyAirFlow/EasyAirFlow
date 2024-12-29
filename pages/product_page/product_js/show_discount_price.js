@@ -76,7 +76,7 @@ async function applyDiscount() {
         originalPrice - (originalPrice * discountPercentage) / 100;
       priceElement.innerHTML = `
     <span class="old-price">$${originalPrice.toFixed(2)}</span>
-    <br></br>
+    <br>
     <span class="showing_discount_customer"> -${discountPercentage}%</span>
     <span class="new-price">$${discountedPrice.toFixed(2)}</span>
     `;
