@@ -1,0 +1,8 @@
+.old-price {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.new-price {
+    font-weight: bold;
+}
