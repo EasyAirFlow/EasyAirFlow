@@ -1,0 +1,126 @@
+/* Cart Drawer */
+.cart-drawer {
+    position: fixed;
+    bottom: -100%; /* Hidden by default */
+    left: 0;
+    width: 95%;
+    height: 50vh; /* Pops up to 50% of the viewport height */
+    background: white;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    transition: bottom 0.4s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .cart-drawer.hidden {
+    bottom: -100%; /* Hidden position */
+  }
+  
+  .cart-drawer.visible {
+    bottom: 0; /* Pops up */
+  }
+  
+  /* Header */
+  .cart-drawer__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .cart-drawer__header h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .cart-drawer__close {
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  /* Products Container */
+  .cart-drawer__products {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  } 
+
+  .cart-drawer__products div {
+    position: relative;
+    display: grid; /* Use flexbox for column layout */
+    grid-template-columns: 0.5fr 3fr 7fr 1fr; /* Define column sizes */
+    align-items: center; /* Vertically center the items */
+    margin-bottom: 5px; /* Spacing between rows */
+  }
+   
+  .cart-drawer__products span {
+    margin-bottom: 10px;
+  }
+
+  .cart-drawer__products #price_of_items_in_cart {
+    text-align: right;
+  }
+
+  .cart-drawer__products #items_in_cart {
+    text-align: center;
+  }
+
+  .cart-drawer__products .remove-item {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  /* Footer */
+  .cart-drawer__footer {
+    margin-bottom: 20px;
+  }
+  
+  .totals__subtotal {
+    font-size: 18px;
+  }
+  
+  .totals__subtotal-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .tax-note {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Checkout Button */
+  .cart__checkout-button {
+    width: 100%;
+    background: #333;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s;
+  }
+  
+  .cart__checkout-button:hover {
+    background: #0056b3;
+  }
+  
+  /* Recommendations Placeholder */
+  .cart-drawer__recommendations {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+  

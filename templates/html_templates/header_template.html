@@ -17,9 +17,10 @@
     <a href="#profile">
       <img src="../../templates/images_templates/profileicon.webp" alt="Profile" class="icon" />
     </a>
-    <a href="../../pages/cart_page/">
+    <a id="cart-icon"> <!-- quick and dirty because of css.....-->
       <img src="../../templates/images_templates/shoppingcart.png" alt="Cart" class="icon" />
     </a>
+    
   </div>
 </header>
 
@@ -29,7 +30,7 @@
 </div>
 
 <nav id="side-menu" class="side-menu">
-  <button class="close-btn" onclick="toggleMenu()">X</button>
+  <button class="close-btn" onclick="toggleMenu()">&times;</button>
   <ul>
     <li><a href="../../pages/home_page/">Home</a></li>
     <li><a href="../../pages/product_page/">Products</a></li>

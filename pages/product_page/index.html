@@ -6,15 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyAirFlow - Products</title>    
-    <link rel="stylesheet" href="../../templates/css_templates/bodyCssBlueRemove.css">
-    <link rel="stylesheet" href="../../templates/css_templates/headerStyle.css">
+    <link rel="stylesheet" href="../../templates/css_templates/bodyCssBlueRemove.css" />
+    <link rel="stylesheet" href="../../templates/css_templates/headerStyle.css" />
+    <link rel="stylesheet" href="../../templates/css_templates/footerStyle.css" />
+    <link rel="stylesheet" href="../../templates/css_templates/cart_drawer_display.css" />
+
     <script src="../../templates/js_templates/header_template.js" defer></script>
+    <script src="../../templates/js_templates/footer_template.js" defer></script>
     <script src="../../templates/js_templates/toggle_menu.js" defer></script>
+    <script src="../../templates/js_templates/cart_drawer_display.js" defer></script>
 
     <!-- Specific for this site -->
     <link rel="stylesheet" href="product_page.css">
     <link rel="stylesheet" href="show_price.css">
-    <script src="product_js/add_to_cart.js" defer></script>
     <script src="product_js/show_discount_price.js" defer></script>
 </head>
 
@@ -32,7 +36,7 @@
                     <p class="quantity">30x Sleep Tape</p>
                     <p class="usageTime">(1-2 month use)</p>
                     <p class="dynamic-price">10.99</p>
-                    <button class="add-to-cart" onclick="addToCart('Sleep Tape', 10.99)">Add to Cart</button>
+                    <button class="add-to-cart" data-product-name="30x Sleep Tape" data-product-price="10.99">Add to Cart</button>
                 </article>
 
                 <article class="product">
@@ -42,7 +46,7 @@
                     <p class="quantity">30x Nasal Strips</p>
                     <p class="usageTime">(1-2 month use)</p>
                     <p class="dynamic-price">8.99</p>
-                    <button class="add-to-cart" onclick="addToCart('Nasal Strips', 8.99)">Add to Cart</button>
+                    <button class="add-to-cart" data-product-name="30x Nasal Strips" data-product-price="8.99">Add to Cart</button>
                 </article>
             </div>
 
@@ -58,24 +62,11 @@
                     <p class="quantity">30x Nasal strips + 30x Sleep Tape</p>
                     <p class="usageTime">(1-2 month use)</p>
                     <p class="dynamic-price">17.99</p>
-                    <button class="add-to-cart" onclick="addToCart('Sleep & Nasal Tape Package', 17.99)">Add to Cart</button>
+                    <button class="add-to-cart" data-product-name="30x Nasal strips + 30x Sleep Tape" data-product-price="17.99">Add to Cart</button>
                 </article>
             </div>
         </section>
-
-        <section class="cart-section">
-            <h3>Your Cart</h3>
-            <ul id="cart-list">
-                <!-- Cart items will be dynamically added here -->
-            </ul>
-            <button onclick="clearCart()">Clear Cart</button>
-            <button onclick="window.location.href='../cart_page/'">Go to Cart</button>
-        </section>
     </main>
-
-    <footer class="footer">
-        <p>&copy; 2024 EasyAirFlow. All rights reserved.</p>
-    </footer>
 </body>
 
 </html>
