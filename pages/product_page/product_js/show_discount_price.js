@@ -79,6 +79,7 @@ async function applyDiscount() {
     <span class="old-price">$${originalPrice.toFixed(2)}</span>
     <br>
     <span class="showing_discount_customer"> -${discountPercentage}%</span>
+    <br>
     <span class="new-price">$${discountedPrice.toFixed(2)}</span>
     `;
     }
