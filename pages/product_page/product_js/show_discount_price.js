@@ -72,6 +72,7 @@ async function applyDiscount() {
   document.querySelectorAll(".dynamic-price").forEach((priceElement) => {
     const originalPrice = parseFloat(priceElement.textContent.trim());
     if (!isNaN(originalPrice)) {
+        console.log("^^inside the HTML WRITE")
       const discountedPrice =
         originalPrice - (originalPrice * discountPercentage) / 100;
       priceElement.innerHTML = `
