@@ -60,7 +60,7 @@
     margin: 10px 0;
 }
 
-.product .price, #dynamic-price {
+.product .dynamic-price {
     font-size: 32px;
     font-weight: bold;
     margin: 10px 0;

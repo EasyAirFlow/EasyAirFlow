@@ -82,6 +82,7 @@ async function applyDiscount() {
     <span class="new-price">$${discountedPrice.toFixed(2)}</span>
     `;
     }
+    else return console.log("!isNaN(originalprice) failure")
   });
 }
 
