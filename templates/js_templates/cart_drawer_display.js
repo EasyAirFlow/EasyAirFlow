@@ -144,8 +144,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Add click event listener to the cart icon to show the cart drawer
     cartIcon.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent default navigation if inside an <a> tag
+        if  (cartDrawer.classList.contains("visible")) {
+            hideCart();
+        }
+        else if (cartDrawer.classList.contains("hidden")){
+            e.preventDefault(); // Prevent default navigation if inside an <a> tag
         showCart(); // Show the cart drawer
+        }
     });
 
     // Attach the close button event listener dynamically after loading cart drawer
