@@ -67,14 +67,17 @@ async function validateDiscountCode(event) {
           setCookie("discountCode", discountCode, 30);
 
           // Display "Applying Discount..." and redirect after 3 seconds 
-        setTimeout(() => {feedbackMessage.textContent = "Applying Discount 3s..."; feedbackMessage.style.color = "blue";
-            setTimeout(() => {feedbackMessage.textContent = "Applying Discount 2s..."; feedbackMessage.style.color = "blue";
-                setTimeout(() => {feedbackMessage.textContent = "Applying Discount 1s..."; feedbackMessage.style.color = "blue";
-            // Redirect to the product page
+        setTimeout(1000);
+        feedbackMessage.textContent = "Applying Discount 3s..."; feedbackMessage.style.color = "blue";
+        setTimeout(1000);
+        feedbackMessage.textContent = "Applying Discount 2s..."; feedbackMessage.style.color = "blue";
+        setTimeout(1000);
+        feedbackMessage.textContent = "Applying Discount 1s..."; feedbackMessage.style.color = "blue";
+        setTimeout(1000);
+        feedbackMessage.textContent = "Active Discount!"; feedbackMessage.style.color = "green";
+        
+        // Redirect to the product page
         window.location.href = "/pages/product_page/";
-        }, 1000);}, 1000);}, 1000);
-        
-        
       } else {
           feedbackMessage.textContent = "❌ Sorry, this discount code is not valid. Please try another.";
           feedbackMessage.style.color = "red";
