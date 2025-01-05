@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             headerContainer.innerHTML = data; // Insert the template content
             document.body.insertAdjacentElement('afterbegin', headerContainer); // Add the header to the top of the body
+            initializeCountrySelector(); // Initialize the country selector
+            initializeShortCountrySelector();
+            initializeRegionPrice();
         })
         .catch(error => {
             console.error(error);

@@ -73,8 +73,7 @@ async function applyDiscount() {
     const originalPrice = parseFloat(priceElement.textContent.trim());
     if (!isNaN(originalPrice)) {
         console.log("^^inside the HTML WRITE")
-      const discountedPrice =
-        originalPrice - (originalPrice * discountPercentage) / 100;
+      const discountedPrice = originalPrice - (originalPrice * discountPercentage) / 100;
       priceElement.innerHTML = `
     <span class="old-price">$${originalPrice.toFixed(2)}</span>
     <br>
