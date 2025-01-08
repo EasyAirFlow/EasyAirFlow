@@ -75,11 +75,11 @@ async function applyDiscount() {
         console.log("^^inside the HTML WRITE")
       const discountedPrice = originalPrice - (originalPrice * discountPercentage) / 100;
       priceElement.innerHTML = `
-    <span class="old-price">$${originalPrice.toFixed(2)}</span>
+    <span class="old-price">${originalPrice.toFixed(2)}</span>
     <br>
     <span class="showing_discount_customer"> -${discountPercentage}%</span>
     <br>
-    <span class="new-price">$${discountedPrice.toFixed(2)}</span>
+    <span class="new-price">${discountedPrice.toFixed(2)}</span>
     `;
     }
     else return console.log("!isNaN(originalprice) failure")
