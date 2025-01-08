@@ -72,5 +72,5 @@ dropdownOptions.addEventListener("click", (event) => {
     }
   }
 });
-applyDiscount();
 }
+applyDiscount();
