@@ -53,20 +53,24 @@ function initializeRegionPrice() {
     });
   }
 
-  // Initial adjustment based on the default country
-  adjustPrices("denmark");
+  // Adjust prices using the value from the selectedCountry cookie
+const cookieSelectedCountry = getCookie("selectedCountry") || "denmark"; // Default to Denmark if cookie is missing
+adjustPrices(cookieSelectedCountry); // Adjust prices based on the cookie value
 
-  // Adjust prices when a new country is selected
-  dropdownOptions.addEventListener("click", (event) => {
-    const selectedItem = event.target.closest("li");
-    if (selectedItem) {
-      const selectedCountry = selectedItem.getAttribute("data-value");
-      if (selectedCountry) {
-        countryDropdown.setAttribute("data-value", selectedCountry); // Update the selected country
-        adjustPrices(selectedCountry);
-      } else {
-        console.warn("No valid country selected.");
-      }
+// Adjust prices when a new country is selected
+dropdownOptions.addEventListener("click", (event) => {
+  const selectedItem = event.target.closest("li");
+  if (selectedItem) {
+    const selectedCountry = selectedItem.getAttribute("data-value");
+    if (selectedCountry) {
+      // Save selected country to cookie
+      document.cookie = `selectedCountry=${selectedCountry}; path=/; max-age=${7 * 24 * 60 * 60}`;
+      
+      adjustPrices(selectedCountry); // Adjust prices for the selected country
+    } else {
+      console.warn("No valid country selected.");
     }
-  });
+  }
+});
+
 }

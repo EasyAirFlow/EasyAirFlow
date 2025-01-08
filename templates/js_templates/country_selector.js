@@ -1,3 +1,13 @@
+// Function to get a cookie by name
+function getCookie(name) {
+  const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
+    const [key, value] = cookie.split("=");
+    acc[key] = value;
+    return acc;
+  }, {});
+  return cookies[name];
+}
+
 function initializeCountrySelector() {
   const menuLines = document.querySelector(".menu-lines");
 
@@ -101,13 +111,18 @@ function initializeShortCountrySelector() {
       </li>
     `).join('');
 
-    // Update selected option
-    const selectedValue = selectedOption.getAttribute('data-value') || 'denmark'; // Default to Denmark
-    const { flag, text } = countryData[selectedValue];
+    // Read the cookie and fallback to Denmark if not found
+    let selectedCountry = getCookie("selectedCountry");
+    if (!countryData[selectedCountry]) {
+      console.warn(`Invalid or missing country in cookie: ${selectedCountry}. Defaulting to Denmark.`);
+      selectedCountry = "denmark"; // Fallback to Denmark
+    }
+    const { flag, text } = countryData[selectedCountry];
     selectedOption.innerHTML = `
       <img src="${flag}" alt="Selected Flag" class="flag-icon">
       ${text}
     `;
+    document.cookie = `selectedCountry=${text}; path=/; max-age=${7 * 24 * 60 * 60}`;
   }
 
   // Adjust on load and on resize
